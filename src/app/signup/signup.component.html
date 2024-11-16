@@ -1,0 +1,58 @@
+<div class="signup-container">
+    <mat-card class="signup-card">
+      <mat-card-title class="signup-title">Sign Up</mat-card-title>
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>First Name</mat-label>
+          <input matInput formControlName="firstName" placeholder="Enter your first name" />
+          <mat-error *ngIf="firstName?.invalid && firstName?.touched">
+            First name is required (minimum 2 characters).
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName="lastName" placeholder="Enter your last name" />
+          <mat-error *ngIf="lastName?.invalid && lastName?.touched">
+            Last name is required (minimum 2 characters).
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email Address</mat-label>
+          <input matInput type="email" formControlName="email" placeholder="Enter your email" />
+          <mat-error *ngIf="email?.invalid && email?.touched">
+            Please enter a valid email address.
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" placeholder="Enter your password" />
+          <mat-error *ngIf="password?.invalid && password?.touched">
+            Password must be at least 6 characters long.
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Confirm Password</mat-label>
+          <input matInput type="password" formControlName="confirmPassword" placeholder="Confirm your password" />
+          <mat-error *ngIf="confirmPassword?.invalid && confirmPassword?.touched">
+            Please confirm your password.
+          </mat-error>
+          <mat-error *ngIf="signupForm.hasError('mismatch') && confirmPassword?.touched">
+            Passwords do not match.
+          </mat-error>
+        </mat-form-field>
+  
+        <button mat-raised-button color="primary" type="submit" [disabled]="signupForm.invalid">
+          Sign Up
+        </button>
+      </form>
+      <div class="footer-text">
+        Already have an account? <a routerLink="/login">Login</a>
+      </div>
+    </mat-card>
+  </div>
+  
