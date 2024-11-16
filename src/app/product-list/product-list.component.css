@@ -1,0 +1,126 @@
+/* Ensure product list container is set to display flex with column direction */
+.product-list {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Aligns child elements vertically */
+  }
+  
+  /* Heading style */
+  .product-list h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #3f51b5;
+  }
+  
+  /* Material table styling */
+  table.mat-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px; /* Adds space below the table */
+  }
+  
+  /* Add padding to table headers and cells */
+  table.mat-table th,
+  table.mat-table td {
+    padding: 16px;
+    text-align: left;
+  }
+  
+  /* Column headers and rows styling */
+  table.mat-header-row {
+    background-color: #f1f1f1;
+    font-weight: bold;
+  }
+  
+  th.mat-header-cell {
+    background-color: #3f51b5;
+    color: white;
+  }
+  
+  tr.mat-row {
+    background-color: #fff;
+    transition: background-color 0.3s;
+  }
+  
+  tr.mat-row:hover {
+    background-color: #e1e1e1;
+  }
+  
+  /* Styling for action buttons in the table */
+  button.mat-button {
+    background-color: #3f51b5;
+    color: white;
+    border-radius: 4px;
+    padding: 8px 16px;
+    transition: background-color 0.2s;
+  }
+  
+  button.mat-button:hover {
+    background-color: #303f9f;
+  }
+  
+  th.mat-header-cell.actions {
+    width: 150px;
+  }
+  
+  td.mat-cell.actions {
+    width: 150px;
+    text-align: center;
+  }
+  
+  /* Pagination container styling */
+  mat-paginator {
+    display: flex;
+    justify-content: flex-end; /* Align pagination controls to the right */
+    margin-top: 10px; /* Space above the paginator */
+    padding: 10px;
+    background-color: #f9f9f9; /* Optional: background color for the paginator */
+    border-radius: 4px; /* Optional: rounded corners for a nicer appearance */
+  }
+  
+  /* Responsive layout */
+  @media (max-width: 768px) {
+    table.mat-table {
+      font-size: 14px;
+    }
+  
+    .product-list h2 {
+      font-size: 1.5rem;
+    }
+  
+    button.mat-button {
+      padding: 6px 12px;
+    }
+  }
+
+  /* Make product name look like a clickable link */
+.product-name-link {
+    color: #3f51b5; /* Material blue color */
+    text-decoration: none; /* Remove underline by default */
+    font-weight: bold; /* Make the text bold */
+    font-size: 16px; /* Adjust the font size */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition on hover */
+  }
+  
+  /* Hover effect to underline the product name */
+  .product-name-link:hover {
+    color: #303f9f; /* Darker blue color when hovering */
+    text-decoration: underline; /* Underline the product name on hover */
+    cursor: pointer; /* Change the cursor to a pointer to indicate it's clickable */
+  }
+  
+  /* Focus effect for accessibility (focus outline) */
+  .product-name-link:focus {
+    outline: 2px solid #ff4081; /* Pinkish outline for accessibility */
+    outline-offset: 2px;
+  }
+  
+  /* Active state (when clicked) */
+  .product-name-link:active {
+    color: #1976d2; /* Blue color when the link is active (clicked) */
+  }
+  
+  

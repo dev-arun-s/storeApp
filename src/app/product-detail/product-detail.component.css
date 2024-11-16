@@ -1,0 +1,86 @@
+/* Styling the entire product card */
+.product-detail-card {
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* Styling for the product image */
+  .product-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .product-image-img {
+    max-width: 400px;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Product Information Styling */
+  .product-info {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .product-info h3 {
+    color: #3f51b5; /* Material Blue */
+    margin-bottom: 10px;
+  }
+  
+  .product-info h4 {
+    color: #333;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  
+  .product-info h5 {
+    color: #4caf50; /* Green for in-stock products */
+    margin-top: 5px;
+  }
+  
+  .product-info h5.out-of-stock {
+    color: #f44336; /* Red for out-of-stock products */
+  }
+  
+  /* Add to Cart Button */
+  button.mat-raised-button {
+    margin-top: 20px;
+    font-size: 16px;
+    padding: 10px 20px;
+    text-transform: none;
+  }
+  
+  /* Product Back Button */
+  mat-card-actions {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  }
+  
+  mat-card-actions button {
+    font-size: 16px;
+    text-transform: none;
+    margin-top: 10px;
+  }
+  
+  /* Styling for product availability */
+  .in-stock {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .out-of-stock {
+    color: red;
+    font-weight: bold;
+  }
+  

@@ -1,0 +1,58 @@
+/* General header styling */
+.header {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Adds space between each nav item */
+  }
+  
+  .nav-link {
+    color: white;
+    font-size: 16px; /* Adjust font size for navigation */
+    text-transform: uppercase; /* Make link text uppercase */
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 4px; /* Add rounded corners to the buttons */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition on hover */
+    white-space: nowrap; /* Prevent text from wrapping */
+  }
+  
+  /* Hover effect for links */
+  .nav-link:hover {
+    background-color: #303f9f; /* Darker blue for hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+  }
+  
+  /* Focus effect for accessibility */
+  .nav-link:focus {
+    outline: none; /* Remove default focus outline */
+    border: 2px solid #ff4081; /* Pinkish color for focus */
+  }
+  
+  /* Mobile menu icon styling (optional) */
+  .mobile-menu-icon {
+    display: none;
+    color: white;
+    font-size: 36px;
+    cursor: pointer;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .navbar {
+      display: none; /* Hide the regular navbar on mobile */
+    }
+  
+    .mobile-menu-icon {
+      display: block; /* Show the mobile menu icon */
+    }
+  }
+  

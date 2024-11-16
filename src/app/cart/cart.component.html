@@ -1,0 +1,58 @@
+<div class="cart-table">
+    <h2>Your Cart</h2>
+
+    <!-- Display a message if the cart is empty -->
+    <div *ngIf="cart.length === 0">
+        <p>Your cart is empty!</p>
+    </div>
+
+    <!-- Angular Material Table -->
+    <table mat-table [dataSource]="cart" class="mat-elevation-z8">
+        <!-- Columns Definition -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Product Name </th>
+            <td mat-cell *matCellDef="let product"> {{ product.name }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef> Price </th>
+            <td mat-cell *matCellDef="let product"> ${{ product.price }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="quantity">
+            <th mat-header-cell *matHeaderCellDef> Quantity </th>
+            <td mat-cell *matCellDef="let product">
+                <input type="number" [(ngModel)]="product.quantity" min="1" />
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="total">
+            <th mat-header-cell *matHeaderCellDef> Total </th>
+            <td mat-cell *matCellDef="let product">
+                ${{ product.price * product.quantity }}
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let product">
+                <button mat-button (click)="removeFromCart(product)">Remove</button>
+            </td>
+        </ng-container>
+
+        <!-- Table Header and Row Definitions -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+
+    <!-- Display total cart price -->
+    <div class="cart-total">
+        <strong>Total: </strong> ${{ getTotal() }}
+    </div>
+
+    <!-- Clear Cart Button -->
+    <div *ngIf="cart.length > 0">
+        <button mat-raised-button color="warn" (click)="clearCart()">Clear Cart</button>
+    </div>
+</div>
