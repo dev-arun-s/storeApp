@@ -13,11 +13,14 @@ import { MatButtonModule } from '@angular/material/button';  // For Material but
 import { MatPaginatorModule } from '@angular/material/paginator';  // If you want pagination
 import { MatSortModule } from '@angular/material/sort';  // For sorting
 import { MatIconModule } from '@angular/material/icon';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './login/login.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -27,10 +30,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ProductListComponent,
     ProductDetailComponent,
     CartComponent,
-    HeaderComponent  // Declare HeaderComponent here
+    HeaderComponent,
+    LoginComponent  // Declare HeaderComponent here
   ],
   imports: [
     FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,  // Include AppRoutingModule for routing
@@ -39,7 +44,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatPaginatorModule,
     MatSortModule,
     MatIconModule,
+    MatInputModule,
     MatCardModule,
+    MatFormFieldModule,
     MatDividerModule,
     MatProgressSpinnerModule
   ],
