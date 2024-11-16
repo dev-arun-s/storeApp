@@ -1,16 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
-
-// Define a simple Product interface
-export interface Product {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  quantity: number;
-  category: string;
-  inStock: boolean;
-}
+import { Product } from './product.model';
 
 @Injectable({
   providedIn: 'root',
@@ -43,8 +33,6 @@ export class ProductService {
   }
 
   addToCart(product: Product): void {
-   /*  this.cart.push(product);
-    this.cartSubject.next(this.cart); */
     const currentCart = this.cartSubject.value;
     const existingProduct = currentCart.find(p => p.id === product.id);
     if (existingProduct) {
