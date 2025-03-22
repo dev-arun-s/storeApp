@@ -8,7 +8,8 @@ import { ViewChild } from '@angular/core';
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  styleUrls: ['./product-list.component.css'],
+  standalone:false
 })
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
@@ -51,5 +52,7 @@ export class ProductListComponent implements OnInit {
   // Add product to the cart
   addToCart(product: Product): void {
     this.productService.addToCart(product);
+    //After adding the product to the cart, display a message to the user
+    alert('Product added to cart');
   }
 }

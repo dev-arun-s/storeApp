@@ -5,7 +5,8 @@ import { Product } from '../product.model';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrl: './cart.component.css'
+  styleUrl: './cart.component.css',
+  standalone:false
 })
 export class CartComponent {
   cart: Product[] = [];
